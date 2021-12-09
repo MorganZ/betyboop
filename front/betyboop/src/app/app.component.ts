@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BackendService } from './services/backend.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'betyboop';
+  constructor(private backendService:BackendService) { }
+
+  ngOnInit(): void {
+    console.log("couc");
+    this.backendService.getInfos().subscribe(res => {
+      console.log(res);
+    })
+  }
+
 }
