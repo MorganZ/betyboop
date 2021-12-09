@@ -33,6 +33,8 @@ export class BetComponent implements OnInit {
 
     this.userService.name.subscribe(nameS => {
       this.userName = nameS;
+
+      this.userService.getUser();
     });
 
     this.subInfos$ = timer(0, 1000)
@@ -63,6 +65,7 @@ export class BetComponent implements OnInit {
             player['win'] = false;
           }
         });
+        this.userService.getUser();
         
       }else{
         this.playerList = res.placements;
@@ -120,7 +123,8 @@ export class BetComponent implements OnInit {
         "player": this.userName,
         "selection": selection,
         "bet": 1
-      }
+      };
+      this.userService.getUser();
       this.isLoading = false;
     }, err => {
       this.isLoading = false;

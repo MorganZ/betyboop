@@ -9,14 +9,20 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavbarComponent implements OnInit {
   name: string | null | undefined;
+  money: any;
 
   constructor(private userService:UserService, private router : Router) { }
   ngOnInit(): void {
     this.userService.name.subscribe(nameS => {
       this.name = nameS;
+     
       if(!this.name){
         this.router.navigate(['login']);
       }
+    });
+
+    this.userService.money.subscribe(money => {
+      this.money = money;
     })
   }
 

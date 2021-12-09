@@ -5,6 +5,6 @@
     />
     <div class="spacer"></div>
     <span class="navName" *ngIf="name">{{name}}</span>
-    <span *ngIf="name">5.12</span><i class="fas fa-hryvnia"></i>
+    <span *ngIf="name">{{money ? money : '-'}}</span><i *ngIf="name" class="fas fa-hryvnia"></i>
   </div>
   
