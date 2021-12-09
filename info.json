@@ -1,0 +1,24 @@
+{
+  "placements": [
+    {
+      "player": "deni",
+      "selection": "win",
+      "bet": 1
+    },
+    {
+      "player": "morgan",
+      "selection": "loose",
+      "bet": 1
+    },
+    {
+      "player": "thomas",
+      "selection": "loose",
+      "bet": 1
+    }
+  ],
+  "winSelection": "loose",
+  "settlement": {
+    "morgan": 1.5,
+    "thomas": 1.5
+  }
+}
