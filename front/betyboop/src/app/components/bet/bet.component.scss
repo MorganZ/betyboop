@@ -5,17 +5,17 @@
 }
 
 .betBanner {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   height: 20%;
   background-position: top;
   background-image: url("https://betclick.hs.llnwd.net/e1/pict/_webpictures/Football/_Leagues/Italy/Serie_A/Napoli/2022_Napoli_Home_Mertens.jpg");
-    span{
-        background-color: #e10014;
-        color:white;
-        padding: 5px;
-    }
+  span {
+    background-color: #e10014;
+    color: white;
+    padding: 5px;
+  }
 }
 
 .betTitle {
@@ -60,22 +60,21 @@
   }
 }
 
-.betSelectionPlayer{
+.betSelectionPlayer {
   display: flex;
   justify-content: center;
   margin-top: 15px;
   flex-direction: column;
   text-align: center;
   align-content: center;
-  span{
-  
+  span {
     width: 100%;
   }
-  .tonPari{
+  .tonPari {
     background-color: #000000;
     border-radius: 5px;
     margin: 7px;
-    color:#FECA02;
+    color: #feca02;
     font-size: 1.9rem;
     padding: 5px;
     font-style: italic;
@@ -96,109 +95,128 @@
   margin-bottom: 3px;
 }
 
-.grey-space{
-    width: 100%;
-    height: 5px;
-    background-color:rgba(153, 153, 153, 0.419);
+.grey-space {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(153, 153, 153, 0.419);
 }
 
-.bet-players{
-    display: flex;
-    background-color: #40c1bb17;
-    margin-left: 5px;
-    .title{
-        margin: 5px;
-        font-weight: bold;
-    }
+.bet-players {
+  display: flex;
+  background-color: #40c1bb17;
+  margin-left: 5px;
+  .title {
+    margin: 5px;
+    font-weight: bold;
+  }
 }
 
-.share-qr{
-    display: flex;
-    justify-content: center;
-    height: 100px;
+.share-qr {
+  display: flex;
+  justify-content: center;
+  height: 100px;
 }
 
-.members{
+.members {
   margin-top: 15px;
   display: flex;
   justify-content: center;
-
 }
 
-.player-list{
+.player-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  .playerBox {
+    margin-top: 25px;
     display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    .playerBox{
-      margin-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      padding-left: 20px;
-      padding-right: 5px;
-      .playerName{
-        // flex-grow: 1;
-      }
-      .sepList{
-        background-color:grey;
-        flex-grow: 2;
-        margin-left: 10px;
-        margin-right: 10px;
-        height: 2px;
-        align-self: center;
-        // flex-grow: 2;
-      }
-      .selecPlayer{
-        width: 30%;
-        font-weight: bold;
-
-        // flex-grow: 1;
-      }
-
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 5px;
+    .playerName {
+      // flex-grow: 1;
     }
-    
+    .sepList {
+      background-color: grey;
+      flex-grow: 2;
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 2px;
+      align-self: center;
+      // flex-grow: 2;
+    }
+    .selecPlayer {
+      width: 30%;
+      font-weight: bold;
+
+      // flex-grow: 1;
+    }
+  }
 }
 
-.mine{
+.mine {
   margin-bottom: 15px;
 }
 
-
-.result{
+.result {
   display: flex;
   justify-content: center;
   margin-top: 15px;
   flex-direction: column;
   text-align: center;
   align-content: center;
-  span{
-  
+  span {
     width: 100%;
     font-weight: bolder;
-
   }
 
-  .resultSelection{
+  .resultSelection {
     color: white;
     border-radius: 5px;
     margin: 7px;
     font-size: 1.9rem;
     padding: 5px;
-
   }
 }
 
-.hasWin{
-  color: #60C524;
+.hasWin {
+  color: #60c524;
 }
 
-.hasLoose{
-  color:#E62B3C;
+.hasLoose {
+  color: #e62b3c;
 }
 
-.hasWinBg{
-  background-color: #60C524;
+.hasWinBg {
+  background-color: #60c524;
 }
 
-.hasLooseBg{
-  background-color:#E62B3C;
+.hasLooseBg {
+  background-color: #e62b3c;
+}
+
+.button2 {
+  background-color: #e10014;
+  margin: 10px;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  text-align: center;
+  white-space: normal;
+  border: 0.2rem solid transparent;
+  border-radius: 2.3rem;
+  user-select: none;
+  height: 2.3rem;
+  font-size: 1rem;
+  min-width: 9rem;
+  transition: 0.2s;
+}
+
+.me {
+  font-family: "MetropolisB";
 }

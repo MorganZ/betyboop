@@ -41,6 +41,14 @@ $betyboop-theme: mat.define-light-theme((
     
 }
 
+@font-face {
+
+  font-family: "MetropolisB";
+  src: local("MetropolisB"), url(./assets/fonts/Metropolis-Black.otf) format("truetype");
+  
+}
+
+
 body{
     font-family: "Metropolis", sans-serif;
     margin:0;

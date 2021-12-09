@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.userService.name.subscribe(nameS => {
       if(nameS){
-        this.router.navigate(['bet']);
+        this.router.navigate(['bet/61b20b897e1efe4b874ee26a']);
       }
     })
   }

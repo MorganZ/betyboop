@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription, switchMap, timer } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
 import { UserService } from 'src/app/services/user.service';
@@ -18,9 +19,15 @@ export class BetComponent implements OnInit {
   playerBet:any = null;
   isSetled = false;
   selectionWin: string = "";
-  constructor(private backendService: BackendService, private userService: UserService) { }
+  isLoading = false;
+  id= null;
+  constructor(private backendService: BackendService, private userService: UserService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+
     this.userService.name.subscribe(nameS => {
       this.userName = nameS;
     });
@@ -28,19 +35,19 @@ export class BetComponent implements OnInit {
     this.subInfos$ = timer(0, 1000)
     .pipe(
       switchMap(() =>
-        this.backendService.getInfos()
+        this.backendService.getInfos(this.id)
       )
     )
     .subscribe(res => {
-      if(res.winSelection != ""){
+      if(res.winSelection){
         this.isSetled = true;
         this.selectionWin = res.winSelection;
         this.playerList = res.placements;
       
-        if(res.placements.find(x => x.player == this.userName)){   
-          this.playerBet = res.placements.find(x => x.player == this.userName);
+        if(res.placements.find((x:any) => x.player == this.userName)){   
+          this.playerBet = res.placements.find((x:any) => x.player == this.userName);
           this.playerBet['win'] = this.playerBet.selection == res.winSelection ? true : false;
-          var index = res.placements.findIndex(x => x.player  == this.userName);
+          var index = res.placements.findIndex((x:any) => x.player  == this.userName);
           if (index > -1) {
             this.playerList.splice(index, 1);
           }     
@@ -57,9 +64,9 @@ export class BetComponent implements OnInit {
       }else{
         this.playerList = res.placements;
       
-        if(res.placements.find(x => x.player == this.userName)){   
-          this.playerBet = res.placements.find(x => x.player == this.userName);
-          var index = res.placements.findIndex(x => x.player  == this.userName);
+        if(res.placements.find((x:any) => x.player == this.userName)){   
+          this.playerBet = res.placements.find((x:any) => x.player == this.userName);
+          var index = res.placements.findIndex((x:any) => x.player  == this.userName);
           if (index > -1) {
             this.playerList.splice(index, 1);
           }     
@@ -82,13 +89,17 @@ export class BetComponent implements OnInit {
   }
 
   sendSelection(selection: string){
-    this.backendService.placement(selection, this.userName).subscribe(res => {
+    this.isLoading = true;
+    this.backendService.placement(selection, this.userName, this.id).subscribe(res => {
       this.playerBet = {
         "player": this.userName,
         "selection": selection,
         "bet": 1
       }
-      
+      this.isLoading = false;
+    }, err => {
+      this.isLoading = false;
+
     })
   }
 

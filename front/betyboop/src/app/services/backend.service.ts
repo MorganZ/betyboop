@@ -14,15 +14,15 @@ export class BackendService {
     this.apiGatewayUrl = 	"https://g3ch63poae.execute-api.eu-west-1.amazonaws.com/"
   }
 
-  getInfos(){
-    return of(data);
-    // return this.http.get(this.apiGatewayUrl + "infos");
+  getInfos(id:any):Observable<any>{
+    return this.http.get(this.apiGatewayUrl + "infos?id=" + id);
   }
 
-  placement(selection: string, userName:any){
-    return this.http.post(this.apiGatewayUrl + "placement", {
+  placement(selection: string, userName:any, id:any){
+    return this.http.post(this.apiGatewayUrl + "placement?id=" + id, {
       "selection": selection,
-      "userName": userName
+      "player": userName,
+      "bet": 1
     });
   }
 }

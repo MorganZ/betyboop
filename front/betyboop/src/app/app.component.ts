@@ -11,10 +11,7 @@ export class AppComponent {
   constructor(private backendService:BackendService) { }
 
   ngOnInit(): void {
-    console.log("couc");
-    this.backendService.getInfos().subscribe(res => {
-      console.log(res);
-    })
+   
   }
 
 }
