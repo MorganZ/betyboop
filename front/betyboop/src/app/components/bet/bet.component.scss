@@ -1,0 +1,163 @@
+.betBox {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.betBanner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  height: 20%;
+  background-position: top;
+  background-image: url("https://betclick.hs.llnwd.net/e1/pict/_webpictures/Football/_Leagues/Italy/Serie_A/Napoli/2022_Napoli_Home_Mertens.jpg");
+    span{
+        background-color: #e10014;
+        color:white;
+        padding: 5px;
+    }
+}
+
+.betTitle {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  p {
+    color: rgb(153, 153, 153);
+    font-size: 10px;
+  }
+}
+
+.betTeams {
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  .one {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.6em;
+  }
+  .two {
+    color: rgb(102, 102, 102);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.betSelections {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  .betSelectionsBox {
+    text-align: center;
+    margin: 8px;
+    width: 100%;
+    span {
+      margin-top: 3px;
+    }
+  }
+}
+
+.betSelectionPlayer{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  span{
+  
+    width: 100%;
+  }
+  .tonPari{
+    background-color: #000000;
+    border-radius: 5px;
+    margin: 7px;
+    color:#FECA02;
+    font-size: 1.9rem;
+    padding: 5px;
+    font-style: italic;
+  }
+}
+
+.oddButtonWrapper {
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-self: stretch;
+  text-align: center;
+  padding: 1rem 0.7rem;
+  border-radius: 0.4rem;
+  background: #fc0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.grey-space{
+    width: 100%;
+    height: 5px;
+    background-color:rgba(153, 153, 153, 0.419);
+}
+
+.bet-players{
+    display: flex;
+    background-color: #40c1bb17;
+    margin-left: 5px;
+    .title{
+        margin: 5px;
+        font-weight: bold;
+    }
+}
+
+.share-qr{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.members{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.player-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    .playerBox{
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 20px;
+      padding-right: 5px;
+      .playerName{
+        // flex-grow: 1;
+      }
+      .sepList{
+        background-color:grey;
+        flex-grow: 2;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 2px;
+        align-self: center;
+        // flex-grow: 2;
+      }
+      .selecPlayer{
+        width: 30%;
+        font-weight: bold;
+
+        // flex-grow: 1;
+      }
+
+    }
+    
+}
+
+.mine{
+  margin-bottom: 15px;
+}

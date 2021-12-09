@@ -1,0 +1,25 @@
+.spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #d30e18;
+    color: white;
+    font-weight: 600;
+
+    i{
+        margin: 0 16px;
+    }
+  }
+
+  .toolbar span{
+    margin: 0 16px;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+    width: 105px;;
+  }

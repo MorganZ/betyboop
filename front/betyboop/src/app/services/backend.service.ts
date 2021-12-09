@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import * as data from './info.json';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,8 @@ export class BackendService {
   }
 
   getInfos(){
-    return this.http.get(this.apiGatewayUrl + "infos");
+    return of(data);
+    // return this.http.get(this.apiGatewayUrl + "infos");
   }
 
   placement(){

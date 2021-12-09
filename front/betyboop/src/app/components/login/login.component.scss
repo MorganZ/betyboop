@@ -1,0 +1,37 @@
+.box{
+    margin: auto;
+    width: 90%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 100px;
+    border-radius: 5px;
+}
+
+.pseudo-input{
+    width: 100%;
+}
+
+.button1{
+    background-color: #e10014;
+    margin: 10px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    white-space: normal;
+    border: 0.2rem solid transparent;
+    border-radius: 2.3rem;
+    user-select: none;
+    height: 4.6rem;
+    padding: 0 3rem;
+    font-size: 1.4rem;
+    width: auto;
+    min-width: 9rem;
+    transition: .2s;
+}
