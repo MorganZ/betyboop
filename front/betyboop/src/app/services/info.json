@@ -6,17 +6,12 @@
       "bet": 1
     },
     {
-      "player": "Nevin",
-      "selection": "Naples",
-      "bet": 1
-    },
-    {
       "player": "thomas",
       "selection": "Leicester",
       "bet": 1
     }
   ],
-  "winSelection": "Naples",
+  "winSelection": "",
   "settlement": {
   }
 }

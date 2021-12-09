@@ -35,6 +35,24 @@ export class BetComponent implements OnInit {
       if(res.winSelection != ""){
         this.isSetled = true;
         this.selectionWin = res.winSelection;
+        this.playerList = res.placements;
+      
+        if(res.placements.find(x => x.player == this.userName)){   
+          this.playerBet = res.placements.find(x => x.player == this.userName);
+          this.playerBet['win'] = this.playerBet.selection == res.winSelection ? true : false;
+          var index = res.placements.findIndex(x => x.player  == this.userName);
+          if (index > -1) {
+            this.playerList.splice(index, 1);
+          }     
+        }
+
+        this.playerList.forEach(player => {
+          if(player.selection == res.winSelection){
+            player['win'] = true;
+          }else{
+            player['win'] = false;
+          }
+        });
         
       }else{
         this.playerList = res.placements;
@@ -63,7 +81,23 @@ export class BetComponent implements OnInit {
     return count;
   }
 
+  sendSelection(selection: string){
+    this.backendService.placement(selection, this.userName).subscribe(res => {
+      this.playerBet = {
+        "player": this.userName,
+        "selection": selection,
+        "bet": 1
+      }
+      
+    })
+  }
 
-
+  getParticipantCount(){
+    if(this.playerBet){
+      return this.playerList.length + 1;
+    }else{
+      return this.playerList.length;
+    }
+  }
  
 }

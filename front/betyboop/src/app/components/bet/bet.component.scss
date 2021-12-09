@@ -161,3 +161,44 @@
 .mine{
   margin-bottom: 15px;
 }
+
+
+.result{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  span{
+  
+    width: 100%;
+    font-weight: bolder;
+
+  }
+
+  .resultSelection{
+    color: white;
+    border-radius: 5px;
+    margin: 7px;
+    font-size: 1.9rem;
+    padding: 5px;
+
+  }
+}
+
+.hasWin{
+  color: #60C524;
+}
+
+.hasLoose{
+  color:#E62B3C;
+}
+
+.hasWinBg{
+  background-color: #60C524;
+}
+
+.hasLooseBg{
+  background-color:#E62B3C;
+}

@@ -19,7 +19,10 @@ export class BackendService {
     // return this.http.get(this.apiGatewayUrl + "infos");
   }
 
-  placement(){
-    return this.http.post(this.apiGatewayUrl + "placement", {});
+  placement(selection: string, userName:any){
+    return this.http.post(this.apiGatewayUrl + "placement", {
+      "selection": selection,
+      "userName": userName
+    });
   }
 }

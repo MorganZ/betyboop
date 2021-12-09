@@ -23,20 +23,20 @@
 
     <div *ngIf="!playerBet && !isSetled" class="betSelections">
         <div class="betSelectionsBox">
-            <div class="oddButtonWrapper">
+            <div class="oddButtonWrapper" (click)="sendSelection(sel1)">
                 <b>{{sel1}}</b>
             </div>
             <span>{{getSelectionCount(sel1)}}</span>
         </div>
         <div class="betSelectionsBox">
-            <div class="oddButtonWrapper">
-                <b>{{sel3}}</b>
+            <div class="oddButtonWrapper" (click)="sendSelection(sel2)">
+                <b>{{sel2}}</b>
             </div>
             <span>{{getSelectionCount(sel2)}}</span>
 
         </div>
         <div class="betSelectionsBox">
-            <div class="oddButtonWrapper">
+            <div class="oddButtonWrapper" (click)="sendSelection(sel3)">
                 <b>{{sel3}}</b>
             </div>
             <span>{{getSelectionCount(sel3)}}</span>
@@ -123,7 +123,11 @@
         </div>
 
     </div>
-    <div></div>
+    <div *ngIf="isSetled" class="result">
+        <span>Resultat du match</span>
+        <div class="resultSelection" [ngClass]="{'hasWinBg': playerBet.win == true, 'hasLooseBg': playerBet.win == false }">{{selectionWin}}</div>
+
+    </div>
 
     <div class="grey-space"></div>
 
@@ -133,7 +137,7 @@
     </div> -->
 
     <div class="bet-players">
-        <span class="title"> <i class="fas fa-users"></i>  {{playerList.length}} PARTICIPANTS</span>      
+        <span class="title"> <i class="fas fa-users"></i>  {{getParticipantCount()}} PARTICIPANTS</span>      
     </div>
 
     <!-- <div class="members">
@@ -141,11 +145,27 @@
     </div> -->
 
     <div class="player-list">
-        <div *ngIf="playerBet" class="playerBox mine">
+        <div *ngIf="playerBet && isSetled" class="playerBox mine" [ngClass]="{'hasWin': playerBet.win == true, 'hasLoose': playerBet.win == false }">
             <span class="playerName">{{playerBet.player}}</span><span class="sepList"></span><span class="selecPlayer">{{playerBet.selection}}</span>
         </div>
+
+        <div *ngIf="playerBet && !isSetled" class="playerBox mine">
+            <span class="playerName">{{playerBet.player}}</span><span class="sepList"></span><span class="selecPlayer">{{playerBet.selection}}</span>
+        </div>
+        
+        <ng-container *ngIf="!isSetled">
         <div *ngFor="let player of playerList" class="playerBox">
             <span class="playerName">{{player.player}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
-        </div>       
+        </div>   
+    </ng-container>
+    <ng-container *ngIf="isSetled">
+        <div *ngFor="let player of playerList" class="playerBox" [ngClass]="{'hasWin': player.win == true, 'hasLoose': player.win == false }">
+            <span class="playerName">{{player.player}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
+        </div>   
+    </ng-container>
+
+
     </div>
 </div>
+
+<!--  -->
