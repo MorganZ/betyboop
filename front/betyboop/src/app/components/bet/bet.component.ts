@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription, switchMap, timer } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
 import { UserService } from 'src/app/services/user.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bet',
@@ -21,7 +22,7 @@ export class BetComponent implements OnInit {
   selectionWin: string = "";
   isLoading = false;
   id= null;
-  constructor(private backendService: BackendService, private userService: UserService, private route:ActivatedRoute) { }
+  constructor(private backendService: BackendService, private userService: UserService, private route:ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -76,6 +77,17 @@ export class BetComponent implements OnInit {
     });
   }
 
+  openDialog(){
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+  
+    });
+  }
+
   getSelectionCount(selection:String){
     var count = 0;
     if(this.playerList.length > 0){
@@ -112,3 +124,18 @@ export class BetComponent implements OnInit {
   }
  
 }
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
+export class DialogOverviewExampleDialog {
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
