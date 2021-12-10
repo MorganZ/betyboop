@@ -1,6 +1,6 @@
 <div class="rooms">
     <span class="roomTitle">Mes Rooms</span>
-    <div class="roomContent" *ngFor="let item of rooms" (click)="goTo(item.id)">
-        <span>{{item.name}}</span> <i class="fas fa-arrow-circle-right"></i>
+    <div class="roomContent" *ngFor="let item of rooms" (click)="goTo(item._id)">
+        <span>{{item.titleRoom}}</span> <i class="fas fa-arrow-circle-right"></i>
     </div>
 </div>

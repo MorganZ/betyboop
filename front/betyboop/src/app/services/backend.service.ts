@@ -25,4 +25,8 @@ export class BackendService {
       "bet": 1
     });
   }
+
+  rooms(){
+    return this.http.get(this.apiGatewayUrl + "rooms");
+  }
 }
