@@ -1,11 +1,11 @@
 <div class="box">
   <div class="box_header">
-    <h1 class="box_title">Connexion</h1>
+    <h1 class="box_title">Connection</h1>
   </div>
   <div class="box_content">
     <form>
       <mat-form-field class="pseudo-input" appearance="fill">
-        <mat-label>Your Pseudo</mat-label>
+        <mat-label>Your Name</mat-label>
         <input matInput placeholder="Ex. Jean"  [(ngModel)]="name"           [ngModelOptions]="{standalone: true}"
         />
       </mat-form-field>
@@ -14,7 +14,7 @@
           class=" button1"
           (click)="setName(name)"
         >
-          Connexion
+        Connect
         </button>
       </div>
     </form>

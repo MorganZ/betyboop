@@ -4,6 +4,10 @@
   background-color: white;
 }
 
+.titleMarket{
+  font-size:1rem;
+}
+
 .betBanner {
   display: flex;
   justify-content: flex-end;
@@ -49,7 +53,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 10px;
   span {
     width: 100%;
   }
