@@ -84,7 +84,7 @@ export class BetComponent implements OnInit {
         this.userService.getUser();
         
       }else{
-        if(this.playerList.length != res.placements.length - 1){
+        if((this.playerBet && this.playerList.length != res.placements.length - 1) || (!this.playerBet && this.playerList.length != res.placements.length)){
           res.placements.forEach((element:any, index:any) => {
             setTimeout(() => {
               if(!this.playerList.find(w => w.player == element.player) && element.player != this.userName){
