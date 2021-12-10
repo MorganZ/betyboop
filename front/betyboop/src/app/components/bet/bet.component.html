@@ -27,20 +27,20 @@
 
     <div *ngIf="!playerBet && !isSetled && !isLoading" class="betSelections">
         <div class="betSelectionsBox">
-            <div class="oddButtonWrapper" (click)="sendSelection(sel1)">
+            <div class="oddButtonWrapper shake" (click)="sendSelection(sel1)">
                 <b>{{sel1}}</b>
             </div>
             <span>{{getSelectionCount(sel1)}}</span>
         </div>
         <div class="betSelectionsBox">
-            <div class="oddButtonWrapper" (click)="sendSelection(sel2)">
+            <div class="oddButtonWrapper shake" (click)="sendSelection(sel2)">
                 <b>{{sel2}}</b>
             </div>
             <span>{{getSelectionCount(sel2)}}</span>
 
         </div>
         <div class="betSelectionsBox">
-            <div class="oddButtonWrapper" (click)="sendSelection(sel3)">
+            <div class="oddButtonWrapper shake" (click)="sendSelection(sel3)">
                 <b>{{sel3}}</b>
             </div>
             <span>{{getSelectionCount(sel3)}}</span>
@@ -145,7 +145,7 @@
 
     <div class="members">
         <button
-        class=" button2"
+        class=" button2 shake2"
         (click)="openDialog()"
       >
         Partager
@@ -154,7 +154,7 @@
 
 
 
-    <div class="player-list">
+    <div class="player-list"  >
         <div *ngIf="playerBet && isSetled" class="playerBox mine" [ngClass]="{'hasWin': playerBet.win == true, 'hasLoose': playerBet.win == false }">
             <span class="playerName me">{{playerBet.player}}</span><span class="sepList"></span><span class="selecPlayer me">{{playerBet.selection}}</span>
         </div>
@@ -164,7 +164,7 @@
         </div>
         
         <ng-container *ngIf="!isSetled">
-        <div *ngFor="let player of playerList" class="playerBox">
+        <div *ngFor="let player of playerList" class="playerBox" [ngClass]="{'fade-in': player.fadeIn, '': !player.fadeIn }">
             <span class="playerName">{{player.player}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
         </div>   
     </ng-container>

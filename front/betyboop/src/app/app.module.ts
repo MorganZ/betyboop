@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatInputModule,
     MatDialogModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

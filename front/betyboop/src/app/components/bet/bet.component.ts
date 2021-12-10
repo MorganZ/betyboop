@@ -24,6 +24,7 @@ export class BetComponent implements OnInit {
   id= null;
   qr:any = null;
   link: any;
+  isFresh = false;
   constructor(private backendService: BackendService, private userService: UserService, private route:ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -68,7 +69,30 @@ export class BetComponent implements OnInit {
         this.userService.getUser();
         
       }else{
-        this.playerList = res.placements;
+        if(this.playerList.length != res.placements.length){
+          res.placements.forEach((element:any, index:any) => {
+           
+            setTimeout(() => {
+              if(!this.playerList.find(w => w.player == element.player)){
+                element["fadeIn"] = true;
+                this.playerList.unshift(element);
+                setTimeout(() => {
+                  this.playerList.find(w => w.player == element.player)["fadeIn"] = false;
+                }, 1000);
+              }
+            }, index * 200);
+          });
+
+          // this.isFresh = true;
+          // setTimeout(() => {
+          //   this.isFresh = false;
+
+          // }, 1000);
+        }
+
+
+
+        // this.playerList = res.placements;
       
         if(res.placements.find((x:any) => x.player == this.userName)){   
           this.playerBet = res.placements.find((x:any) => x.player == this.userName);
@@ -81,6 +105,7 @@ export class BetComponent implements OnInit {
      
     });
   }
+  
 
   openDialog(){
     new AwesomeQR({

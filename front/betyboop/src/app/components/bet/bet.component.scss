@@ -12,7 +12,7 @@
   background-position: top;
   background-image: url("https://betclick.hs.llnwd.net/e1/pict/_webpictures/Football/_Leagues/Italy/Serie_A/Napoli/2022_Napoli_Home_Mertens.jpg");
   span {
-    background-color: #e10014;
+    background-color: #1E98FD;
     color: white;
     padding: 5px;
   }
@@ -74,7 +74,7 @@
     background-color: #000000;
     border-radius: 5px;
     margin: 7px;
-    color: #feca02;
+    color: #b933f0;
     font-size: 1.9rem;
     padding: 5px;
     font-style: italic;
@@ -89,10 +89,11 @@
   text-align: center;
   padding: 1rem 0.7rem;
   border-radius: 0.4rem;
-  background: #fc0;
+  background: #1E98FD;
   border: 1px solid transparent;
   cursor: pointer;
   margin-bottom: 3px;
+  color:black;
 }
 
 .grey-space {
@@ -195,7 +196,7 @@
 }
 
 .button2 {
-  background-color: #e10014;
+  background-color: #b933f0;
   margin: 10px;
   color: white;
   position: relative;
@@ -218,4 +219,73 @@
 
 .me {
   font-family: "MetropolisB";
+}
+
+
+.shake {
+  animation: shake 0.82s 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.shake2 {
+  animation: shake 0.82s 2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.pot {
+  bottom: 15%;
+  position: absolute;
+  -webkit-animation: linear infinite;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 5s;
+}
+@-webkit-keyframes run {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;    
+  }
 }
