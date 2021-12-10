@@ -27,4 +27,7 @@ export class NavbarComponent implements OnInit {
     })
   }
 
+  goToRoom(){
+    this.router.navigate(['rooms']);
+  }
 }

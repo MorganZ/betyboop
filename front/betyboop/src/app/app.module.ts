@@ -14,13 +14,15 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    BetComponent
+    BetComponent,
+    RoomsComponent
   ],
   imports: [
     BrowserModule,

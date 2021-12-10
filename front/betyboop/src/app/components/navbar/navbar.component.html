@@ -4,6 +4,7 @@
       src="../assets/logo.png"
     />
     <div class="spacer"></div>
+    <span *ngIf="name" (click)="goToRoom()"><i class="room fas fa-chess-rook"></i></span>
     <span class="navName" *ngIf="name">{{name}}</span>
     <span *ngIf="name">{{money >= 0 ? money : '-'}}</span><i *ngIf="name" class="fas fa-hryvnia"></i>
   </div>

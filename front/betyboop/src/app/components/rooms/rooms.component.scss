@@ -1,0 +1,28 @@
+.rooms{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15px;
+    .roomTitle{
+        color:White;
+        font-size: 3rem; 
+        margin-bottom: 50px;
+
+    }
+    .roomContent{
+        height: 50px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+            margin-left: 15px;
+        }
+        i{
+            margin-right: 15px;
+            color: #1E98FD;
+        }
+    }
+}
