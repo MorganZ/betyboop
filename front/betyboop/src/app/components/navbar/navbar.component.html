@@ -1,10 +1,10 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
     <img
-      src="../assets/betclic-logo.png"
+      src="../assets/logo.png"
     />
     <div class="spacer"></div>
     <span class="navName" *ngIf="name">{{name}}</span>
-    <span *ngIf="name">{{money ? money : '-'}}</span><i *ngIf="name" class="fas fa-hryvnia"></i>
+    <span *ngIf="name">{{money >= 0 ? money : '-'}}</span><i *ngIf="name" class="fas fa-hryvnia"></i>
   </div>
   

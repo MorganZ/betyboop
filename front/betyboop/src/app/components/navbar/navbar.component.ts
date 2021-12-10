@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
     });
 
     this.userService.money.subscribe(money => {
+      console.log(money);
       this.money = money;
     })
   }

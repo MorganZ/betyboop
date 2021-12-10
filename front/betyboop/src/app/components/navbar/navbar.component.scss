@@ -6,12 +6,17 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1E98FD;
+    background-color: white;
     color: white;
     font-weight: 600;
 
     i{
         margin: 0 5px;
+        color: #1E98FD;
+    }
+
+    span{
+      color: #1E98FD;
     }
   }
 
@@ -21,5 +26,7 @@
 
   .toolbar img {
     margin: 0 16px;
-    width: 105px;;
+
+    width: 230px;
+
   }

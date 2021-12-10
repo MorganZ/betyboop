@@ -18,7 +18,10 @@ export class UserService {
   setName(name:string){
     localStorage.setItem("name", name);
     this.name.next(name);
-    this.http.post(this.apiGatewayUrl + "/users", {"username": name});
+    this.http.post(this.apiGatewayUrl + "/users", {"username": name}).subscribe(res => {
+      console.log('created');
+      this.getUser();
+    });
   }
 
   getUser(){

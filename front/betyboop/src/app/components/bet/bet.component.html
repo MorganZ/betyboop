@@ -129,7 +129,7 @@
     </div>
     <div *ngIf="isSetled && !isLoading" class="result">
         <span>Resultat du match</span>
-        <div class="resultSelection" [ngClass]="{'hasWinBg': playerBet && playerBet.win == true, 'hasLooseBg': playerBet && playerBet.win == false }">{{selectionWin}}</div>
+        <div class="resultSelection" [ngClass]="{'hasWinBg': playerBet && playerBet.win == true, 'hasLooseBg': playerBet && playerBet.win == false, 'hasNot': !playerBet }">{{selectionWin}}</div>
     </div>
 
     <div class="grey-space"></div>
@@ -156,21 +156,21 @@
 
     <div class="player-list"  >
         <div *ngIf="playerBet && isSetled" class="playerBox mine" [ngClass]="{'hasWin': playerBet.win == true, 'hasLoose': playerBet.win == false }">
-            <span class="playerName me">{{playerBet.player}}</span><span class="sepList"></span><span class="selecPlayer me">{{playerBet.selection}}</span>
+            <span class="playerName me">{{formatName(playerBet.player)}}</span><span class="sepList"></span><span class="selecPlayer me">{{playerBet.selection}}</span>
         </div>
 
         <div *ngIf="playerBet && !isSetled" class="playerBox mine">
-            <span class="playerName me">{{playerBet.player}}</span><span class="sepList"></span><span class="selecPlayer">{{playerBet.selection}}</span>
+            <span class="playerName me">{{formatName(playerBet.player)}}</span><span class="sepList"></span><span class="selecPlayer">{{playerBet.selection}}</span>
         </div>
         
         <ng-container *ngIf="!isSetled">
         <div *ngFor="let player of playerList" class="playerBox" [ngClass]="{'fade-in': player.fadeIn, '': !player.fadeIn }">
-            <span class="playerName">{{player.player}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
+            <span class="playerName">{{formatName(player.player)}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
         </div>   
     </ng-container>
     <ng-container *ngIf="isSetled">
         <div *ngFor="let player of playerList" class="playerBox" [ngClass]="{'hasWin': player.win == true, 'hasLoose': player.win == false }">
-            <span class="playerName">{{player.player}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
+            <span class="playerName">{{formatName(player.player)}}</span><span class="sepList"></span><span class="selecPlayer">{{player.selection}}</span>
         </div>   
     </ng-container>
 

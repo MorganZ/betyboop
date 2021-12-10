@@ -59,6 +59,8 @@ export class BetComponent implements OnInit {
           }     
         }
 
+        console.log(this.playerBet);
+
         this.playerList.forEach(player => {
           if(player.selection == res.winSelection){
             player['win'] = true;
@@ -69,11 +71,10 @@ export class BetComponent implements OnInit {
         this.userService.getUser();
         
       }else{
-        if(this.playerList.length != res.placements.length){
+        if(this.playerList.length != res.placements.length - 1){
           res.placements.forEach((element:any, index:any) => {
-           
             setTimeout(() => {
-              if(!this.playerList.find(w => w.player == element.player)){
+              if(!this.playerList.find(w => w.player == element.player) && element.player != this.userName){
                 element["fadeIn"] = true;
                 this.playerList.unshift(element);
                 setTimeout(() => {
@@ -82,25 +83,16 @@ export class BetComponent implements OnInit {
               }
             }, index * 200);
           });
-
-          // this.isFresh = true;
-          // setTimeout(() => {
-          //   this.isFresh = false;
-
-          // }, 1000);
         }
-
-
-
-        // this.playerList = res.placements;
       
-        if(res.placements.find((x:any) => x.player == this.userName)){   
-          this.playerBet = res.placements.find((x:any) => x.player == this.userName);
-          var index = res.placements.findIndex((x:any) => x.player  == this.userName);
-          if (index > -1) {
-            this.playerList.splice(index, 1);
-          }     
-        }
+        this.playerBet = res.placements.find((x:any) => x.player == this.userName);
+        // if(res.placements.find((x:any) => x.player == this.userName)){   
+          
+        //   var index = res.placements.findIndex((x:any) => x.player  == this.userName);
+        //   if (index > -1) {
+        //     this.playerList.splice(index, 1);
+        //   }     
+        // }
       }
      
     });
@@ -163,6 +155,12 @@ export class BetComponent implements OnInit {
     }else{
       return this.playerList.length;
     }
+  }
+
+  formatName(name:any){
+    var length = 12;
+    var trimmedString = name.length > length ? name.substring(0, length - 3) + "..." : name;
+    return trimmedString;
   }
  
 }

@@ -98,7 +98,7 @@
 
 .grey-space {
   width: 100%;
-  height: 5px;
+  height: 10px;
   background-color: rgba(153, 153, 153, 0.419);
 }
 
@@ -191,7 +191,16 @@
   background-color: #60c524;
 }
 
+.hasNot {
+  background-color: #000000;
+}
+
+
 .hasLooseBg {
+  background-color: #e62b3c;
+}
+
+.hasNone{
   background-color: #e62b3c;
 }
 
