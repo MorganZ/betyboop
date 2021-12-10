@@ -30,4 +30,10 @@ export class NavbarComponent implements OnInit {
   goToRoom(){
     this.router.navigate(['rooms']);
   }
+
+  formatName(name:any){
+    var length = 8;
+    var trimmedString = name.length > length ? name.substring(0, length - 3) + "..." : name;
+    return trimmedString;
+  }
 }
