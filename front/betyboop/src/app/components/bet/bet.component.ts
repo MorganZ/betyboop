@@ -27,6 +27,8 @@ export class BetComponent implements OnInit {
   isFresh = false;
   titleRoom: any;
   titleMarket: any;
+  team1: any;
+  team2: any;
 
 
   constructor(private backendService: BackendService, private userService: UserService, private route:ActivatedRoute, public dialog: MatDialog) { }
@@ -54,6 +56,9 @@ export class BetComponent implements OnInit {
       this.sel3 = res.selections[2];
       this.titleRoom = res.titleRoom;
       this.titleMarket = res.titleMarket;
+      this.team1 = res.titleMatch[0];
+      this.team2 = res.titleMatch[1];
+
       if(res.winSelection){
         this.isSetled = true;
         this.selectionWin = res.winSelection;

@@ -11,13 +11,13 @@
 
     <div class="betTeams">
         <span class="one">
-            {{sel1}}
+            {{team1}}
         </span>
         <span class="two">
             <b>18h45</b>
         </span>
         <span class="one">
-            {{sel3}}
+            {{team2}}
         </span>
     </div>
 
@@ -135,7 +135,8 @@
 
     </div>
     <div *ngIf="isSetled && !isLoading" class="result">
-        <span>Resultat du match</span>
+        <span> {{titleMarket}} </span>
+
         <div class="resultSelection" [ngClass]="{'hasWinBg': playerBet && playerBet.win == true, 'hasLooseBg': playerBet && playerBet.win == false, 'hasNot': !playerBet }">{{selectionWin}}</div>
     </div>
 
