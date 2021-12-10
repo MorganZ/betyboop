@@ -50,6 +50,9 @@
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  span {
+    width: 100%;
+  }
   .betSelectionsBox {
     text-align: center;
     margin: 8px;
@@ -58,6 +61,15 @@
       margin-top: 3px;
     }
   }
+}
+
+.betTitlte{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 .betSelectionPlayer {
@@ -69,6 +81,8 @@
   align-content: center;
   span {
     width: 100%;
+    font-size: 1.5rem;
+
   }
   .tonPari {
     background-color: #000000;

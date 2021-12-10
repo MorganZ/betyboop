@@ -13,9 +13,9 @@ import { AwesomeQR } from 'awesome-qr';
 export class BetComponent implements OnInit {
   subInfos$: Subscription = new Subscription;
   playerList: any[] = [];
-  sel1 = "Naples";
-  sel2 = "Nul";
-  sel3 = "Leicester";
+  sel1 = "";
+  sel2 = "";
+  sel3 = "";
   userName = null;
   playerBet:any = null;
   isSetled = false;
@@ -25,6 +25,10 @@ export class BetComponent implements OnInit {
   qr:any = null;
   link: any;
   isFresh = false;
+  titleRoom: any;
+  titleMarket: any;
+
+
   constructor(private backendService: BackendService, private userService: UserService, private route:ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -45,6 +49,11 @@ export class BetComponent implements OnInit {
       )
     )
     .subscribe(res => {
+      this.sel1 = res.selections[0];
+      this.sel2 = res.selections[1];
+      this.sel3 = res.selections[2];
+      this.titleRoom = res.titleRoom;
+      this.titleMarket = res.titleMarket;
       if(res.winSelection){
         this.isSetled = true;
         this.selectionWin = res.winSelection;
@@ -59,7 +68,6 @@ export class BetComponent implements OnInit {
           }     
         }
 
-        console.log(this.playerBet);
 
         this.playerList.forEach(player => {
           if(player.selection == res.winSelection){

@@ -1,12 +1,12 @@
 <div class="betBox">
     <div class="betBanner">
-        <span> Le Challenge des meilleurs !</span>
+        <span> {{titleRoom}} </span>
     </div>
     <div class="betTitle">
         <span class="">
             <img src="../../../assets/euro-icon.JPG"/>
         </span>
-        <p> Ligue Europa - Groupe C, Journée 6  </p>
+        <!-- <p> Ligue Europa - Groupe C, Journée 6  </p> -->
     </div>
 
     <div class="betTeams">
@@ -25,7 +25,12 @@
         <mat-spinner diameter=30 ></mat-spinner>
     </div>
 
+    <div *ngIf="!playerBet && !isSetled && !isLoading" class="betTitlte">
+
+        <span> {{titleMarket}} </span>
+    </div>
     <div *ngIf="!playerBet && !isSetled && !isLoading" class="betSelections">
+
         <div class="betSelectionsBox">
             <div class="oddButtonWrapper shake" (click)="sendSelection(sel1)">
                 <b>{{sel1}}</b>
@@ -47,7 +52,9 @@
         </div>   
     </div>
     <div *ngIf="playerBet  && !isSetled && !isLoading" class="betSelectionPlayer">
-        <span>Ton pari </span>
+        <span>{{titleMarket}} </span>
+        <p>Ton paris </p>
+
         <div class="tonPari">
             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>5996E205-6404-4977-967E-312F8E36DC4C</title>
